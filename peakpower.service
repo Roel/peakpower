@@ -1,0 +1,15 @@
+[Unit]
+Description = Peak power notifier
+After = network-online.target
+Wants = network-online.target
+
+[Service]
+User = pi
+Group = pi
+Type = simple
+ExecStart = /opt/peakpower/peakpower.sh
+Restart = always
+RestartSec = 10
+
+[Install]
+WantedBy = multi-user.target
